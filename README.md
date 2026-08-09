@@ -1,5 +1,7 @@
 # CI/CD Tools and Practices Final Project Template
 
+**Project name:** `ci-cd-final-project`
+
 This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
 
 ## Usage
@@ -26,6 +28,13 @@ exit
 
 ## Tasks
 
+This project implements a full CI/CD chain for the `counter` REST microservice:
+
+- **CI with GitHub Actions** (`.github/workflows/workflow.yml`): checkout, install dependencies,
+  lint with `flake8`, run unit tests with `nose`. Triggered on every push and pull request on `main`.
+- **CD with OpenShift Pipelines** (`.tekton/tasks.yml`): `cleanup` task to reset the workspace and
+  `nose` task to run the unit tests inside the cluster. Both are chained in an OpenShift pipeline
+  with `git-clone`, `flake8`, `buildah` and `openshift-client` (deploy).
 
 ## License
 
