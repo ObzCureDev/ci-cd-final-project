@@ -1,0 +1,28 @@
+$ gh run list
+completed	success	Add CI workflow, Tekton cleanup and nose tasks, and project name	CI workflow	main	push	31319686312	29s	2026-08-09T14:54:30Z
+completed	failure	Initial commit	CI workflow	main	push	31319494067	0s	2026-08-09T14:50:10Z
+
+$ gh run view 31319686312 --verbose
+
+✓ main CI workflow · 31319686312
+Triggered via push less than a minute ago
+
+JOBS
+✓ build in 24s (ID 93260537045)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Install dependencies
+  ✓ Lint with flake8
+  ✓ Run unit tests with nose
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+build: .github#2
+
+
+For more information about the job, try: gh run view --job=93260537045
+View this run on GitHub: https://github.com/ObzCureDev/ci-cd-final-project/actions/runs/31319686312
